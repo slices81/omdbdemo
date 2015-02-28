@@ -57,7 +57,7 @@ public class ListControllerTest {
 	@Test
 	public void testSuccess() {
 		try {
-			mockMvc.perform(get( "/searchMovies?query=X-Men"
+			mockMvc.perform(get( "/api/v1/search?query=X-Men"
 			        ))
 			        .andExpect(status().isOk())
 			        .andExpect(content().contentType(contentType));

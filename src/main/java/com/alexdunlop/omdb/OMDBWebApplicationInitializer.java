@@ -18,7 +18,7 @@ public class OMDBWebApplicationInitializer implements WebApplicationInitializer 
 	        webApplicationContext.register(WebMvcConfig.class);
 	 
 	        Dynamic dynamc = servletContext.addServlet("dispatcherServlet", new DispatcherServlet(webApplicationContext));
-	        dynamc.addMapping("/search/");
+	        dynamc.addMapping("/api/v1/*");
 	        dynamc.setLoadOnStartup(1);
 	    }
 
