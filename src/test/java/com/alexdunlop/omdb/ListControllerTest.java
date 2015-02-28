@@ -70,6 +70,23 @@ public class ListControllerTest {
                .andExpect(jsonPath("$.score", Matchers.is(1)))
                .andExpect(jsonPath("$.comment", Matchers.is("ok")));*/
 	}
+	
+	@Test
+	public void testSuccessOnly() {
+		try {
+			mockMvc.perform(get( "/api/v1/search?query=X-Men"
+			        ))
+			        .andExpect(status().isOk())
+			      ;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+             /* .andExpect(jsonPath("$.name", Matchers.is("fred")))
+               .andExpect(jsonPath("$.score", Matchers.is(1)))
+               .andExpect(jsonPath("$.comment", Matchers.is("ok")));*/
+	}
 	@Test
 	public void testContentType() {
 		try {
