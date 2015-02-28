@@ -1,5 +1,8 @@
 package com.alexdunlop.omdb;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,10 +13,11 @@ import javax.validation.Valid;
 
 @RestController
 public class ListController {
-	@RequestMapping(value = "/search", method=RequestMethod.GET)
+	@RequestMapping(value = "/search", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-	public MovieList feedback(@Valid  @ModelAttribute() MovieSearch query) {
+	public ResponseEntity<Void> search() {
        // logger.info("Feedback webmetod called");
-		return new MovieList();
+		ResponseEntity<Void> responseEntity = new ResponseEntity<>(HttpStatus.CREATED);
+        return responseEntity;
     }
 }
