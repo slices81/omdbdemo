@@ -15,9 +15,11 @@ import javax.validation.Valid;
 public class ListController {
 	@RequestMapping(value = "/search", method=RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-	public ResponseEntity<Void> search() {
+	public MovieList search() {
        // logger.info("Feedback webmetod called");
-		ResponseEntity<Void> responseEntity = new ResponseEntity<>(HttpStatus.CREATED);
-        return responseEntity;
+		//ResponseEntity<Void> responseEntity = new ResponseEntity<>(HttpStatus.CREATED);
+		MovieList  l = new MovieList();
+        l.setName("Test");
+        return l;
     }
 }
