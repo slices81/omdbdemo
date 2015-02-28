@@ -6,11 +6,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.alexdunlop.omdb.ListController;
-//import org.springframework.web.servlet.view.json.MappingJacksonJsonView;
+import com.alexdunlop.omdb.MovieResource;
  
 @EnableWebMvc
-@ComponentScan(basePackageClasses = ListController.class)
+@ComponentScan(basePackageClasses = MovieResource.class)
 @Configuration
 public class WebMvcConfig{
  
