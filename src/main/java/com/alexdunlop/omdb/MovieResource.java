@@ -42,8 +42,8 @@ public class MovieResource {
 
 	@RequestMapping(value = "/movie/{movieId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public Movie findMovie(@PathVariable("movieId") String movieId) {
-			Movie movie = OMDBService.findMovie(movieId);
+	public Movie findMovie(@Valid @ModelAttribute()  MovieId movieId) {
+			Movie movie = OMDBService.findMovie(movieId.getMovieId());
 			return movie;
 		
 	}

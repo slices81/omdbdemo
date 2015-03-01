@@ -60,9 +60,9 @@ public class MovieResourceTest {
 		try {
 			mockMvc.perform(get( "/search"
 			        ))
-			        .andExpect(status().isOk())
+			        .andExpect(status().isUnprocessableEntity())
 			        .andExpect(content().contentType(contentType))
-			        .andExpect(jsonPath("$.result", Matchers.is("Failed")));
+			        .andExpect(jsonPath("$.message", Matchers.is("Validation Failed")));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -79,8 +79,7 @@ public class MovieResourceTest {
 			mockMvc.perform(get( "/search?Name=X-Men"
 			        ))
 			        .andExpect(status().isOk())
-			        .andExpect(content().contentType(contentType))
-			         .andExpect(jsonPath("$.result", Matchers.is("OK")));
+			        .andExpect(content().contentType(contentType));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -97,9 +96,9 @@ public class MovieResourceTest {
 		try {
 			mockMvc.perform(get( "/search?Name="
 			        ))
-			        .andExpect(status().isOk())
+			        .andExpect(status().isUnprocessableEntity())
 			        .andExpect(content().contentType(contentType))
-			        .andExpect(jsonPath("$.result", Matchers.is("Failed")));
+			        .andExpect(jsonPath("$.message", Matchers.is("Validation Failed")));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -112,9 +111,9 @@ public class MovieResourceTest {
 			try {
 				mockMvc.perform(get( "/search?Name= "
 				        ))
-				        .andExpect(status().isOk())
+				        .andExpect(status().isUnprocessableEntity())
 				        .andExpect(content().contentType(contentType))
-				        .andExpect(jsonPath("$.result", Matchers.is("Failed")));
+				        .andExpect(jsonPath("$.message", Matchers.is("Validation Failed")));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -130,9 +129,9 @@ public class MovieResourceTest {
 			try {
 				mockMvc.perform(get( "/search?Name=X"
 				        ))
-				        .andExpect(status().isOk())
+				        .andExpect(status().isUnprocessableEntity())
 				        .andExpect(content().contentType(contentType))
-				        .andExpect(jsonPath("$.result", Matchers.is("Failed")));
+				        .andExpect(jsonPath("$.message", Matchers.is("Validation Failed")));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -150,7 +149,6 @@ public class MovieResourceTest {
 				        ))
 				        .andExpect(status().isOk())
 				        .andExpect(content().contentType(contentType))
-				        .andExpect(jsonPath("$.result", Matchers.is("OK")))
 				         .andExpect(jsonPath("$.movies", Matchers.not(Matchers.emptyCollectionOf(Movie.class))));
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
@@ -198,11 +196,11 @@ public class MovieResourceTest {
 		}
 		
 		@Test
-		public void testMovieBIdNoFormaty() {
+		public void testMovieBIdNoFormat() {
 			try {
 				mockMvc.perform(get( "/movie/tttx"
 				        ))
-				        .andExpect(status().isOk())
+				        .andExpect(status().isUnprocessableEntity())
 				        .andExpect(content().contentType(contentType));
 				} catch (Exception e) {
 				// TODO Auto-generated catch block
