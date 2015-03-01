@@ -11,7 +11,6 @@ import org.springframework.validation.ObjectError;
 public class SearchResponse {
 private List<Movie> movies;
 private String result;
-private List<ObjectError> errors;
 public SearchResponse(String result, ArrayList<Movie> movies) {
 	this.result = result;
 	this.movies = movies;
@@ -55,10 +54,7 @@ public SearchResponse(String result) {
 	this.result = result;
 }
 
-public SearchResponse(String result, List<ObjectError> allErrors) {
-	this.result = result;
-	this.setErrors(allErrors);
-}
+
 
 public List<Movie> getMovies() {
 	return movies;
@@ -75,12 +71,5 @@ public void setResult(String result) {
 	this.result = result;
 }
 
-public List<ObjectError> getErrors() {
-	return errors;
-}
-
-public void setErrors(List<ObjectError> errors) {
-	this.errors = errors;
-}
 
 }

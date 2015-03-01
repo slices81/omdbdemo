@@ -142,4 +142,75 @@ public class MovieResourceTest {
                .andExpect(jsonPath("$.score", Matchers.is(1)))
                .andExpect(jsonPath("$.comment", Matchers.is("ok")));*/
 	}
+		
+		@Test
+		public void testAtLeastOneResult() {
+			try {
+				mockMvc.perform(get( "/search?Name=X-Men"
+				        ))
+				        .andExpect(status().isOk())
+				        .andExpect(content().contentType(contentType))
+				        .andExpect(jsonPath("$.result", Matchers.is("OK")))
+				         .andExpect(jsonPath("$.movies", Matchers.not(Matchers.emptyCollectionOf(Movie.class))));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				fail(e.getMessage());
+			}
+             /* .andExpect(jsonPath("$.name", Matchers.is("fred")))
+               .andExpect(jsonPath("$.score", Matchers.is(1)))
+               .andExpect(jsonPath("$.comment", Matchers.is("ok")));*/
+	}
+		@Test
+		public void testNoResults() {
+			try {
+				mockMvc.perform(get( "/search?Name=YYYYYYYYYYYZZZZZz"
+				        ))
+				        .andExpect(status().isOk())
+				        .andExpect(content().contentType(contentType))
+				        
+				         .andExpect(jsonPath("$", Matchers.emptyCollectionOf(Movie.class)));
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				fail(e.getMessage());
+			}
+             /* .andExpect(jsonPath("$.name", Matchers.is("fred")))
+               .andExpect(jsonPath("$.score", Matchers.is(1)))
+               .andExpect(jsonPath("$.comment", Matchers.is("ok")));*/
+	}
+		
+		@Test
+		public void testMovieById() {
+			try {
+				mockMvc.perform(get( "/movie/tt1270798"
+				        ))
+				        .andExpect(status().isOk())
+				        .andExpect(content().contentType(contentType));
+				} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				fail(e.getMessage());
+			}
+	             /* .andExpect(jsonPath("$.name", Matchers.is("fred")))
+	               .andExpect(jsonPath("$.score", Matchers.is(1)))
+	               .andExpect(jsonPath("$.comment", Matchers.is("ok")));*/
+		}
+		
+		@Test
+		public void testMovieBIdNoFormaty() {
+			try {
+				mockMvc.perform(get( "/movie/tttx"
+				        ))
+				        .andExpect(status().isOk())
+				        .andExpect(content().contentType(contentType));
+				} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				fail(e.getMessage());
+			}
+	             /* .andExpect(jsonPath("$.name", Matchers.is("fred")))
+	               .andExpect(jsonPath("$.score", Matchers.is(1)))
+	               .andExpect(jsonPath("$.comment", Matchers.is("ok")));*/
+		}
 }

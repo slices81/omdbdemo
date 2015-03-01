@@ -17,7 +17,16 @@ public class Movie
 @Pattern(regexp = ".*\\S.*")
 @Length(min = 3)
 private String name;
+private String imdbID;
 
+public Movie(String imdbID, String fullTitle) {
+	this.name = fullTitle;
+	this.setImdbID(imdbID);
+}
+
+public Movie(){
+	
+}
 public String getName() 
 {
 	return name;
@@ -54,6 +63,14 @@ public String toString() {
 	 return new ToStringBuilder(this).
 		       append("name", name).
 		       toString();
+}
+
+public String getImdbID() {
+	return imdbID;
+}
+
+public void setImdbID(String imdbID) {
+	this.imdbID = imdbID;
 }
 
 }
