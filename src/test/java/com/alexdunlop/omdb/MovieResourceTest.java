@@ -196,6 +196,24 @@ public class MovieResourceTest {
 		}
 		
 		@Test
+		public void testMovieByIdDataSet() {
+			try {
+				mockMvc.perform(get( "/movie/tt1270798"
+				        ))
+				        .andExpect(status().isOk())
+				        .andExpect(content().contentType(contentType))
+				        .andExpect(jsonPath("$.name", Matchers.containsString("X-Men")))
+						.andExpect(jsonPath("$.imdbID", Matchers.is("tt1270798")));
+				} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				fail(e.getMessage());
+			}
+	             /* .andExpect(jsonPath("$.name", Matchers.is("fred")))
+	               .andExpect(jsonPath("$.score", Matchers.is(1)))
+	               .andExpect(jsonPath("$.comment", Matchers.is("ok")));*/
+		}
+		@Test
 		public void testMovieBIdNoFormat() {
 			try {
 				mockMvc.perform(get( "/movie/tttx"

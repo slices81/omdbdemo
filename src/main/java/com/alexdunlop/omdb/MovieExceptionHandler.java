@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.alexdunlop.omdb.exceptions.InvalidRequestException;
+
 
 @ControllerAdvice
-public class ExceptonHandler extends ResponseEntityExceptionHandler {
+public class MovieExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler({ InvalidRequestException.class })
     protected ResponseEntity<Object> handleInvalidRequest(RuntimeException e, WebRequest request) {
         InvalidRequestException ire = (InvalidRequestException) e;

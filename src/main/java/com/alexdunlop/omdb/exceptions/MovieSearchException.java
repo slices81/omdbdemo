@@ -1,4 +1,4 @@
-package com.alexdunlop.omdb;
+package com.alexdunlop.omdb.exceptions;
 
 public class MovieSearchException extends RuntimeException {
 

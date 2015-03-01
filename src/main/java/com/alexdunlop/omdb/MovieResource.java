@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alexdunlop.omdb.exceptions.InvalidRequestException;
 import com.omdbapi.Omdb;
 import com.omdbapi.OmdbConnectionErrorException;
 import com.omdbapi.OmdbMovieNotFoundException;
@@ -42,9 +43,14 @@ public class MovieResource {
 
 	@RequestMapping(value = "/movie/{movieId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	public Movie findMovie(@Valid @ModelAttribute()  MovieId movieId) {
+	public Movie findMovie(@Valid @ModelAttribute()  MovieId movieId, BindingResult result) {
+		if (!result.hasErrors()){
 			Movie movie = OMDBService.findMovie(movieId.getMovieId());
 			return movie;
+			}
+		else{
+			throw new InvalidRequestException("Validation Failed", result);
+		}
 		
 	}
 }
