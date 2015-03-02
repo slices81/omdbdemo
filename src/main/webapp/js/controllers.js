@@ -10,6 +10,6 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', function($sc
 	}]);
 
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Movie', function($scope, $routeParams, Movie) {
-	$scope.phone = Movie.get({imdbID: 'tt1270798'});
+	$scope.phone = Movie.get({'tt1270798');
 
 	}]);
