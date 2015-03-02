@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+var phonecatControllers = angular.module('phonecatControllers',  ['ui.bootstrap']);
 /*phonecatControllers.controller('MovieSearchCtrl', ['$scope', function($scope) {
 	}]);*/
 
