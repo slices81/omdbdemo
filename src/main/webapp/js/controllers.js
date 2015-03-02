@@ -6,7 +6,7 @@ var phonecatControllers = angular.module('phonecatControllers', []);
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
   function($scope, $http) {
-    $http.get('https://raw.githubusercontent.com/angular/angular-phonecat/master/app/phones/phones.json').success(function(data) {
+    $http.get('phones/phones.json').success(function(data) {
       $scope.phones = data;
     });
 
