@@ -10,11 +10,7 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', function($sc
 	}]);
 
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Movie', function($scope, $routeParams, Phone) {
-	  $scope.phone = Phone.get({phoneId: $routeParams.imdbId}, function(phone) {
-	    $scope.mainImageUrl = phone.images[0];
+	  $scope.phone = Movie.get({ImdbId: $routeParams.imdbId}, function(phone) {
 	  });
 
-	  $scope.setImage = function(imageUrl) {
-	    $scope.mainImageUrl = imageUrl;
-	  }
 	}]);
