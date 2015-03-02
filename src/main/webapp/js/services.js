@@ -2,7 +2,7 @@ var phonecatServices = angular.module('phonecatServices', ['ngResource']);
 
 phonecatServices.factory('Phone', ['$resource',
   function($resource){
-    return $resource('api/v1/search?Name=:search', {}, {
+    return $resource('api/v1/search', {}, {
       query: {method:'GET', params:{}, isArray:true}
     });
   }]);

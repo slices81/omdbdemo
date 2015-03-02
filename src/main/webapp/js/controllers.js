@@ -13,7 +13,7 @@ phonecatControllers.controller('MovieSearchCtrl', function($scope, $routeParams,
 });
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope',  '$routeParams', 'Phone', function($scope, $routeParams, Phone) {
-	  $scope.phones = Phone.query({search: $routeParams.movieTitle},{});
+	  $scope.phones = Phone.query({Name: $routeParams.movieTitle},{});
 	  $scope.orderProp = 'age';
 	}]);
 
