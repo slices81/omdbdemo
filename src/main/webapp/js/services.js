@@ -7,10 +7,3 @@ phonecatServices.factory('Phone', ['$resource',
     });
   }]);
 
-
-phonecatServices.factory('Movie', ['$resource',
-                                   function($resource){
-                                     return $resource('api/v1/movie/tt1270798', {}, {
-                                       query: {method:'GET', params:{}, isArray:true}
-                                     });
-                                   }]);

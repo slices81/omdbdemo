@@ -9,8 +9,8 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', function($sc
 	  $scope.orderProp = 'age';
 	}]);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', 'Movie', function($scope, Movie) {
-	alert('In detail comntroll');
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', 'Phone', function($scope, Phone) {
+	  $scope.phones = Phone.query();
 	//$scope.movie = Movie.get();
 
 	}]);
