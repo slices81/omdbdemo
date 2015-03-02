@@ -8,7 +8,6 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
   function($scope, $http) {
 	
     $http.get('phones/phones.json').success(function(data) {
-    	alert('Got data');
       $scope.phones = data;
     });
 
