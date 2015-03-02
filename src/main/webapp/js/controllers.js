@@ -2,9 +2,15 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+/*var phonecatControllers = angular.module('phonecatControllers', []);
 phonecatControllers.controller('MovieSearchCtrl', ['$scope', function($scope) {
-	}]);
+	}]);*/
+
+phonecatControllers.controller('Index', function($scope, $routeParams, $location){
+    $scope.search = function(){
+        $location.url('/movies');
+    };
+});
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', function($scope, Phone) {
 	  $scope.phones = Phone.query();
