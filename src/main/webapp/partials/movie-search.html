@@ -1,8 +1,8 @@
 <div id="welcome" ng-controller="MovieSearchCtrl">
     <b>Welcome! Please Search</b>
     <form ng-submit="search()">
-        <input class="input" type="text" placeholder="search..." /><br>
+        <input class="input" ng-model="search" type="text" placeholder="search..." /><br>
       
-        <input class="input login submit" type="submit" placeholder="login!" />
+        <input class="input submit" type="submit" placeholder="Search!" />
     </form>
 </div>
