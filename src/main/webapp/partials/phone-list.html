@@ -21,7 +21,6 @@
           <p>{{phone.imdbID}}</p>
         </li>
       </ul>
-	<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
-    </div>
+	<div ng-show="pagination"> <pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination></div>    </div>
   </div>
 </div>
