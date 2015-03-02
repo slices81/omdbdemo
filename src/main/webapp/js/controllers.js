@@ -6,7 +6,7 @@ var phonecatControllers = angular.module('phonecatControllers', []);
 /*phonecatControllers.controller('MovieSearchCtrl', ['$scope', function($scope) {
 	}]);*/
 
-phonecatControllers.controller('Index', function($scope, $routeParams, $location){
+phonecatControllers.controller('MovieSearchCtrl', function($scope, $routeParams, $location){
     $scope.search = function(){
         $location.url('/movies');
     };
