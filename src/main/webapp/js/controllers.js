@@ -43,12 +43,7 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Mo
 	  $scope.movie = Movie.get({imdbID: $routeParams.imdbID},{});
 	  $scope.rate = 7;
 	  $scope.max = 10;
-	  $scope.isReadonly = true;
-	  
-	  $scope.hoveringOver = function(value) {
-		    $scope.overStar = value;
-		    $scope.percent = 100 * (value / $scope.max);
-		  };
+	  $scope.isReadonly = false;
 	/*  $scope.setImage = function(imageUrl) {
 	    $scope.mainImageUrl = imageUrl;
 	  }*/
