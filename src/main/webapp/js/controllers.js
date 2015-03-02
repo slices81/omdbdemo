@@ -8,12 +8,12 @@ var phonecatControllers = angular.module('phonecatControllers', []);
 
 phonecatControllers.controller('MovieSearchCtrl', function($scope, $routeParams, $location){
     $scope.search = function(){
-        $location.url('/movies');
+        $location.url('/movies/' + $scope.movieTitle);
     };
 });
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', function($scope, Phone) {
-	  $scope.phones = Phone.query();
+	  $scope.phones = Phone.query({search: $$routeParams.movieTitle},{});
 	  $scope.orderProp = 'age';
 	}]);
 

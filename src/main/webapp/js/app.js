@@ -14,7 +14,7 @@ phonecatApp.config(['$routeProvider',
     when('/search', {
         templateUrl: 'partials/movie-search.html',
         controller: 'MovieSearchCtrl'
-      }).when('/movies', {
+      }).when('/movies/:movieTitle', {
         templateUrl: 'partials/phone-list.html',
         controller: 'PhoneListCtrl'
       }).
