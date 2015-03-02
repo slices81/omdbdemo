@@ -14,13 +14,13 @@
     <div>
       <!--Body content-->
 
-      <ul class="phones">
+      <ul>
         <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
    
           <a href="#/movie/{{phone.imdbID}}">{{phone.name}} {{phone.imdbID}}</a>
           <p>{{phone.imdbID}}</p>
         </li>
       </ul>
-	<div ng-show="pagination"> <pagination total-items="totalItems" items-per-page="itemsPerPage" ng-model="currentPage" ng-change="pageChanged()"></pagination></div>    </div>
+	<pager num-pages="numPages()" current-page="currentPage"></pager>
   </div>
 </div>
