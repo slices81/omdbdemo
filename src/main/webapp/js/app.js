@@ -15,7 +15,7 @@ phonecatApp.config(['$routeProvider',
         templateUrl: 'partials/phone-list.html',
         controller: 'PhoneListCtrl'
       }).
-      when('/phones/:imdbID', {
+      when('/movie/:imdbID', {
         templateUrl: 'partials/phone-detail.html',
         controller: 'PhoneDetailCtrl'
       }).
