@@ -14,6 +14,7 @@ phonecatControllers.controller('MovieSearchCtrl', function($scope, $routeParams,
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', '$log', '$routeParams', 'Phone', function($scope, $log, $routeParams, Phone) {
 	  $scope.phones = Phone.query({Name: $routeParams.movieTitle},{});
+	  $scope.totalItems = $scope.phones.length;
 	  $scope.orderProp = 'age';
 	//  $scope.totalItems = ;
 	  //$scope.currentPage = 1;
