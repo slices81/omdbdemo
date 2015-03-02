@@ -15,9 +15,10 @@ phonecatControllers.controller('MovieSearchCtrl', function($scope, $routeParams,
 phonecatControllers.controller('PhoneListCtrl', ['$scope', '$log', '$routeParams', 'Phone', function($scope, $log, $routeParams, Phone) {
 	  $scope.phones = Phone.query({Name: $routeParams.movieTitle},{});
 	  $scope.orderProp = 'age';
-	  $scope.totalItems = 64;
-	  $scope.currentPage = 4;
-
+	//  $scope.totalItems = ;
+	  //$scope.currentPage = 1;
+	  $scope.itemsPerPage = 10
+	  $scope.currentPage = 1;
 	  $scope.setPage = function (pageNo) {
 	    $scope.currentPage = pageNo;
 	  };
@@ -29,8 +30,7 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$log', '$routeParams
 	  $scope.maxSize = 5;
 	  $scope.bigTotalItems = 175;
 	  $scope.bigCurrentPage = 1;
-	  $scope.nextText = 'Next';
-	  $scope.prevText = 'Back';
+	
 	}]);
 
 /*
