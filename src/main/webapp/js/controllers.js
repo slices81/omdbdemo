@@ -17,7 +17,7 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$log', '$routeParams
 	  $scope.orderProp = 'age';
 	//  $scope.totalItems = ;
 	  //$scope.currentPage = 1;
-	  $scope.itemsPerPage = 5
+	  $scope.itemsPerPage = 5;
 	  $scope.currentPage = 1;
 	  $scope.setPage = function (pageNo) {
 	    $scope.currentPage = pageNo;
