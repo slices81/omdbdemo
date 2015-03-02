@@ -7,4 +7,10 @@ phonecatServices.factory('Phone', ['$resource',
     });
   }]);
 
-          
+
+phonecatServices.factory('Movie', ['$resource',
+                                   function($resource){
+                                     return $resource('api/v1/movie/:imdbid', {}, {
+                                       query: {method:'GET', params:{imdbid:'phones'}, isArray:false}
+                                     });
+                                   }]);
