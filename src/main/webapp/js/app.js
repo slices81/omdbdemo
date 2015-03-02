@@ -16,8 +16,8 @@ phonecatApp.config(['$routeProvider',
         controller: 'PhoneListCtrl'
       }).
       when('/movie', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+        templateUrl: 'partials/phone-list.html',
+        controller: 'PhoneListCtrl'
       }).
       otherwise({
         redirectTo: '/phonesxxx'
