@@ -2,8 +2,8 @@
 
 /* Controllers */
 
-/*var phonecatControllers = angular.module('phonecatControllers', []);
-phonecatControllers.controller('MovieSearchCtrl', ['$scope', function($scope) {
+var phonecatControllers = angular.module('phonecatControllers', []);
+/*phonecatControllers.controller('MovieSearchCtrl', ['$scope', function($scope) {
 	}]);*/
 
 phonecatControllers.controller('Index', function($scope, $routeParams, $location){
