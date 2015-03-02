@@ -3,6 +3,8 @@
 /* Controllers */
 
 var phonecatControllers = angular.module('phonecatControllers', []);
+phonecatControllers.controller('MovieSearchCtrl', ['$scope', function($scope) {
+	}]);
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', function($scope, Phone) {
 	  $scope.phones = Phone.query();
