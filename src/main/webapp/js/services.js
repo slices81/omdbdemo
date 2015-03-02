@@ -12,4 +12,4 @@ phonecatServices.factory('Movie', ['$resource',
                                      return $resource('api/v1/movie/:imdbID', {}, {
                                        query: {method:'GET', params:{imdbID', 'phones'}, isArray:false}
                                      });
-                                   }
+                                   }]);
