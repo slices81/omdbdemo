@@ -9,8 +9,7 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', function($sc
 	  $scope.orderProp = 'age';
 	}]);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', 'Phone', function($scope, Phone) {
-	  $scope.phones = Phone.query();
-	//$scope.movie = Movie.get();
-
-	}]);
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
+                                                   function($scope, $routeParams) {
+                                                     $scope.imdbID = $routeParams.imdbID;
+                                                   }]);
