@@ -12,7 +12,7 @@ phonecatControllers.controller('MovieSearchCtrl', function($scope, $routeParams,
     };
 });
 
-phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', function($scope, Phone) {
+phonecatControllers.controller('PhoneListCtrl', ['$scope',  '$routeParams', 'Phone', function($scope, $routeParams, Phone) {
 	  $scope.phones = Phone.query({search: $routeParams.movieTitle},{});
 	  $scope.orderProp = 'age';
 	}]);
