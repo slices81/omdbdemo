@@ -29,6 +29,8 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$log', '$routeParams
 	  $scope.maxSize = 5;
 	  $scope.bigTotalItems = 175;
 	  $scope.bigCurrentPage = 1;
+	  $scope.nextText = 'Next';
+	  $scope.prevText = 'Back';
 	}]);
 
 /*
