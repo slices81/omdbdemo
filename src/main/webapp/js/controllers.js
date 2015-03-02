@@ -11,6 +11,6 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', 'Phone', function($sc
 
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', 'Movie', function($scope, Movie) {
 	alert('In detail comntroll');
-	$scope.movie = Movie.get();
+	//$scope.movie = Movie.get();
 
 	}]);
