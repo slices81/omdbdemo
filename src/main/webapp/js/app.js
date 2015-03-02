@@ -20,6 +20,6 @@ phonecatApp.config(['$routeProvider',
         controller: 'PhoneDetailCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/phonesxxx'
       });
   }]);
