@@ -12,10 +12,15 @@
      
         <div ng-repeat="phone in phones" class="content">
    
-          <a href="#/movie/{{phone.imdbID}}">{{phone.name}} {{phone.imdbID}}</a>
-          <p>{{phone.imdbID}}</p>
+          <a href="#/movie/{{phone.imdbID}}">{{phone.name}}</a>
+
         </div>
     
-	<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+		<pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+      <p>
+      total Items: {{totalItems}}<br />
+      Items per page: {{itemsPerPage}}<br />
+      Current Page: {{currentPage}}
+      </p>
   </div>
 </div>
