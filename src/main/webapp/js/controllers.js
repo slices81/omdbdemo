@@ -43,9 +43,9 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
 
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Movie', function($scope, $routeParams, Movie) {
 	  $scope.movie = Movie.get({imdbID: $routeParams.imdbID},{});
-	  $scope.rate = 7;
-	  $scope.max = 10;
-	  $scope.isReadonly = false;
+	  $scope.rate = $scope.movie.imdbRating;
+	  $scope.max = 11;
+	  $scope.isReadonly = true;
 	/*  $scope.setImage = function(imageUrl) {
 	    $scope.mainImageUrl = imageUrl;
 	  }*/
