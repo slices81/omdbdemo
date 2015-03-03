@@ -14,23 +14,22 @@ phonecatControllers.controller('MovieSearchCtrl', function($scope, $routeParams,
 
 phonecatControllers.controller('PhoneListCtrl', ['$scope', '$log', '$routeParams', 'Phone', function($scope, $log, $routeParams, Phone) {
 	  $scope.phones = Phone.query({Name: $routeParams.movieTitle},{});
-	  $scope.totalItems = $scope.phones.length;
-	  $scope.orderProp = 'age';
-	//  $scope.totalItems = ;
-	  //$scope.currentPage = 1;
-	  $scope.itemsPerPage = 5;
+	  $scope.itemsPerPage = 5
 	  $scope.currentPage = 1;
-	  $scope.setPage = function (pageNo) {
-	    $scope.currentPage = pageNo;
+
+	  $scope.pageCount = function () {
+	    return Math.ceil($scope.phones.length / $scope.itemsPerPage);
 	  };
 
-	  $scope.pageChanged = function() {
-	    $log.log('Page changed to: ' + $scope.currentPage);
-	  };
+	  $scope.friends.$promise.then(function () {
+	    $scope.totalItems = $scope.friends.length;
+	    $scope.$watch('currentPage + itemsPerPage', function() {
+	      var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
+	        end = begin + $scope.itemsPerPage;
 
-	//  $scope.maxSize = 5;
-	//  $scope.bigTotalItems = 175;
-	//  $scope.bigCurrentPage = 1;
+	      $scope.filteredPhones = $scope.phones.slice(begin, end);
+	    });
+	  });
 	
 	}]);
 
