@@ -9,4 +9,8 @@
 <ul ng-repeat="actor in movie.actors">
 <li>{{actor}}</li>
 </ul>
+<p>{{movie.awards}}</p>
+<ul ng-repeat="actor in movie.country">
+<li>{{country}}{{$last ? '' : ', '}}</li>
+</ul>
 </section>
