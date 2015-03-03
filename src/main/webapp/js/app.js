@@ -4,7 +4,7 @@
 
 var phonecatApp = angular.module('movieApp', [
   'ngRoute',
-  'phonecatControllers',
+  'movieControllers',
   'phonecatServices'
 ]);
 

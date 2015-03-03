@@ -2,17 +2,17 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers',  ['ui.bootstrap']);
+var movieControllers = angular.module('phonecatControllers',  ['ui.bootstrap']);
 /*phonecatControllers.controller('MovieSearchCtrl', ['$scope', function($scope) {
 	}]);*/
 
-phonecatControllers.controller('MovieSearchCtrl', function($scope, $routeParams, $location){
+movieControllers.controller('MovieSearchCtrl', function($scope, $routeParams, $location){
     $scope.search = function(){
         $location.url('/movies/' + $scope.movieTitle);
     };
 });
 
-phonecatControllers.controller('PhoneListCtrl', ['$scope', '$log', '$routeParams', 'Phone', function($scope, $log, $routeParams, Phone) {
+movieControllers.controller('PhoneListCtrl', ['$scope', '$log', '$routeParams', 'Phone', function($scope, $log, $routeParams, Phone) {
 	  $scope.phones = Phone.query({Name: $routeParams.movieTitle},{});
 	  $scope.itemsPerPage = 5
 	  $scope.currentPage = 1;
@@ -41,7 +41,7 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
                                                    }]);
 */
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Movie', function($scope, $routeParams, Movie) {
+movieControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Movie', function($scope, $routeParams, Movie) {
 	  $scope.movie = Movie.get({imdbID: $routeParams.imdbID},{});
 	  $scope.rate = Math.floor($scope.movie.imdbRating);
 	  $scope.max = 11;
