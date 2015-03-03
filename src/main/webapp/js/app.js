@@ -2,7 +2,7 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+var phonecatApp = angular.module('movieApp', [
   'ngRoute',
   'phonecatControllers',
   'phonecatServices'
@@ -15,11 +15,11 @@ phonecatApp.config(['$routeProvider',
         templateUrl: 'partials/movie-search.html',
         controller: 'MovieSearchCtrl'
       }).when('/movies/:movieTitle', {
-        templateUrl: 'partials/phone-list.html',
+        templateUrl: 'partials/movie-list.html',
         controller: 'PhoneListCtrl'
       }).
       when('/movie/:imdbID', {
-        templateUrl: 'partials/phone-details.html',
+        templateUrl: 'partials/movie-details.html',
         controller: 'PhoneDetailCtrl'
       }).
       otherwise({
