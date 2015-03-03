@@ -3,19 +3,14 @@
     <div class="col-md-2">
       <!--Sidebar content-->
 
-      Search: <input ng-model="query">
-      Sort by:
-      <select ng-model="orderProp">
-        <option value="name">Alphabetical</option>
-        <option value="age">Newest</option>
-      </select>
+      
 
     </div>
     <div>
       <!--Body content-->
 
      
-        <div ng-repeat="phone in filteredphones" class="content">
+        <div ng-repeat="phone in filteredPhones" class="content">
    
           <a href="#/movie/{{phone.imdbID}}">{{phone.name}} {{phone.imdbID}}</a>
           <p>{{phone.imdbID}}</p>
