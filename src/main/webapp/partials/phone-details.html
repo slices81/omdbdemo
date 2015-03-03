@@ -10,7 +10,17 @@
 <li>{{actor}}</li>
 </ul>
 <p>{{movie.awards}}</p>
-<ul ng-repeat="actor in movie.country">
-<li>{{country}}{{$last ? '' : ', '}}</li>
+<p>{{movie.country}}</p>
+<p>{{movie.director}}</p>
+<h2>Genres</h2>
+<ul ng-repeat="genre in genres">
+<li>{{genre}}</li>
+</ul>
+<p>{{movie.imdbVotes}}</p>
+<p>{{movie.language}}</p>
+<p>{{movie.rated}}</p>
+<h2>Writers</h2>
+<ul ng-repeat="writer in writers">
+<li>{{writer}}</li>
 </ul>
 </section>
