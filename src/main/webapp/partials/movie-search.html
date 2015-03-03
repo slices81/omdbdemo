@@ -1,8 +1,14 @@
 <div id="welcome" ng-controller="MovieSearchCtrl">
     <b>Welcome! Please Search</b>
     <form ng-submit="search()">
-        <input class="form-control" ng-model="movieTitle" type="text" placeholder="search..." /><br>
+        <input class="form-control" ng-model="movieTitle" type="text" placeholder="search..." required /><br>
       
         <input  class="btn btn-default" type="submit" placeholder="Search!" />
     </form>
+    
+    
+<div class="alert alert-danger"
+    ng-show="userForm.name.$error.required">
+    Please enter some text
+  </div>
 </div>

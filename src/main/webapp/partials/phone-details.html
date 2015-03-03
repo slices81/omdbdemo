@@ -13,14 +13,14 @@
 <p>{{movie.country}}</p>
 <p>{{movie.director}}</p>
 <h2>Genres</h2>
-<ul ng-repeat="genre in genres">
+<ul ng-repeat="genre in movie.genres">
 <li>{{genre}}</li>
 </ul>
 <p>{{movie.imdbVotes}}</p>
 <p>{{movie.language}}</p>
 <p>{{movie.rated}}</p>
 <h2>Writers</h2>
-<ul ng-repeat="writer in writers">
+<ul ng-repeat="writer in movie.writers">
 <li>{{writer}}</li>
 </ul>
 </section>
