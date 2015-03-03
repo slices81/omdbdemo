@@ -21,8 +21,8 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope', '$log', '$routeParams
 	    return Math.ceil($scope.phones.length / $scope.itemsPerPage);
 	  };
 
-	  $scope.friends.$promise.then(function () {
-	    $scope.totalItems = $scope.friends.length;
+	  $scope.phones.$promise.then(function () {
+	    $scope.totalItems = $scope.phones.length;
 	    $scope.$watch('currentPage + itemsPerPage', function() {
 	      var begin = (($scope.currentPage - 1) * $scope.itemsPerPage),
 	        end = begin + $scope.itemsPerPage;
